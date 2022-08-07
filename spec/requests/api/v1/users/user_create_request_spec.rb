@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'User api call' do
+RSpec.describe 'User create api call' do
   it 'can successfully hit the api on a post' do
     user_params = {
                 email: 'Something@special.com',
@@ -55,7 +55,7 @@ RSpec.describe 'User api call' do
     end
 
     it 'will not create a user if the user already exists' do
-      User.create(email: 'Something@special.com', password: "1234", password_confirmation: "1234")
+      User.create(email: 'Something@special.com', password: "1234", password_confirmation: "1234", api_key: SecureRandom.hex)
       user_params = {
                   email: 'Something@special.com',
                   password: "1234",
