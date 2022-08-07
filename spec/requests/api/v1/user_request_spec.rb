@@ -37,4 +37,37 @@ RSpec.describe 'User api call' do
     expect(user_return[:attributes][:email]).to be_a(String)
     expect(user_return[:attributes][:api_key]).to be_a(String)
   end
+
+  describe 'Sad pat/ error handling' do
+    it 'will not create a user if password and confirmation do not match' do
+      user_params = {
+                  email: 'Something@special.com',
+                  password: "1234",
+                  password_confirmation: "1235"
+                }
+        headers = {"CONTENT_TYPE" => "application/json"}
+      post "/api/v1/users", headers: headers, params: JSON.generate(user_params)
+      expect(response).to_not be_successful
+      expect(response.status).to eq(400)
+
+      response_body = JSON.parse(response.body, symbolize_names: true)
+      expect(response_body[:message]).to eq("Validation failed: Password confirmation doesn't match Password")
+    end
+
+    it 'will not create a user if the user already exists' do
+      User.create(email: 'Something@special.com', password: "1234", password_confirmation: "1234")
+      user_params = {
+                  email: 'Something@special.com',
+                  password: "1234",
+                  password_confirmation: "1234"
+                }
+        headers = {"CONTENT_TYPE" => "application/json"}
+      post "/api/v1/users", headers: headers, params: JSON.generate(user_params)
+      expect(response).to_not be_successful
+      expect(response.status).to eq(400)
+
+      response_body = JSON.parse(response.body, symbolize_names: true)
+      expect(response_body[:message]).to eq("Validation failed: Email has already been taken")
+    end
+  end
 end
