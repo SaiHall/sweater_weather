@@ -11,4 +11,8 @@ module Formattable
   def format_time(unix)
     Time.at(unix).to_datetime.strftime('%H:%M:%S')
   end
+
+  def format_date_only(unix)
+    Time.at(unix).to_datetime.strftime('%Y-%m-%d')
+  end
 end

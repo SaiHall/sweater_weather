@@ -20,7 +20,7 @@ class ForecastSerializer
             },
           daily_weather: forecast.daily.map do |day|
             {
-              date: day.date_time,
+              date: day.date,
               sunrise: day.sunrise,
               sunset: day.sunset,
               max_temp: day.max_temp,
