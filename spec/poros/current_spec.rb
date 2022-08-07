@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Current do
   before(:each) do
-    json = File.read('./spec/fixtures/data1_exp.rb')
+    json = File.read('./spec/fixtures/data1_exp.json')
     @data = JSON.parse(json, symbolize_names: true)
   end
 
