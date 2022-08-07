@@ -6,8 +6,6 @@ class Api::V1::UsersController < ApplicationController
     if new_user.save
       new_user[:api_key] = SecureRandom.hex if new_user[:api_key].nil?
       render json: UserSerializer.new(new_user), status: :created
-    else
-      render status: 400
     end
   end
 
