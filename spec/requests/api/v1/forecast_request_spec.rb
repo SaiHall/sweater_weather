@@ -56,4 +56,18 @@ RSpec.describe 'Forecast API: City/State' do
     expect(hourly[0][:conditions]).to be_a(String)
     expect(hourly[0][:icon]).to be_a(String)
   end
+
+  it 'does not contain unnecessary data', :vcr do
+    get "/api/v1/forecast?location=denver, co"
+
+    response_body = JSON.parse(response.body, symbolize_names: true)
+    forecast = response_body[:data]
+    current = forecast[:attributes][:current_weather]
+    daily = forecast[:attributes][:daily_weather][0]
+    hourly = forecast[:attributes][:hourly_weather][0]
+
+    expect(current.keys).to_not include(:pressure, :dew_point, :clouds, :wind_speed, :wind_deg, :wind_gust, :max_temp, :min_temp)
+    expect(hourly.keys).to_not include(:pressure, :dew_point, :clouds, :wind_speed, :wind_deg, :wind_gust, :humidity, :max_temp, :min_temp, :uvi)
+    expect(daily.keys).to_not include(:moonrise, :moonset, :moonphase, :pressure, :humidity, :wind_speed, :wind_deg, :wind_gust, :uvi)
+  end
 end
