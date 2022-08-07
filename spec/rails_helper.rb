@@ -72,4 +72,5 @@ VCR.configure do |config|
   config.filter_sensitive_data('<api_key>') { ENV['GEO_API_KEY'] }
   config.filter_sensitive_data('<api_key>') { ENV['OW_API_KEY'] }
   config.configure_rspec_metadata!
+  config.ignore_hosts 'api.openweathermap.org'
 end
