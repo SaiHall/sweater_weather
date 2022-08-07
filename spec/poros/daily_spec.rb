@@ -10,7 +10,7 @@ RSpec.describe Daily do
   it 'exists and has attributes' do
 
     expect(@day).to be_an_instance_of(Daily)
-    expect(@day.date_time).to eq('2022-08-06 1:00:00')
+    expect(@day.date).to eq('2022-08-06')
     expect(@day.sunrise).to eq('2022-08-06 6:00:37')
     expect(@day.sunset).to eq('2022-08-06 8:20:20')
     expect(@day.conditions).to eq("clear sky")
@@ -21,11 +21,11 @@ RSpec.describe Daily do
 
   it 'can format unix into a readable time' do
 
-    expect(@day.date_time).to eq('2022-08-06 1:00:00')
+    expect(@day.date).to eq('2022-08-06')
     expect(@day.sunrise).to eq('2022-08-06 6:00:37')
     expect(@day.sunset).to eq('2022-08-06 8:20:20')
 
-    expect(@day.date_time).to_not eq(1659805200)
+    expect(@day.date).to_not eq(1659805200)
     expect(@day.sunrise).to_not eq(1659780037)
     expect(@day.sunset).to_not eq(1659831620)
   end
