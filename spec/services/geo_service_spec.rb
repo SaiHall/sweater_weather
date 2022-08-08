@@ -12,4 +12,20 @@ RSpec.describe GeoService, :vcr do
     expect(deeper[:latLng]).to be_a(Hash)
     expect(deeper[:latLng].keys).to include(:lat, :lng)
   end
+
+  it 'can return information from a call given two locations', :vcr do
+    hash = GeoService.get_directions('Miami, FL', 'New Oreleans, LA')
+
+    expect(hash).to be_a(Hash)
+    expect(hash).to have_key(:route)
+    expect(hash[:route]).to be_a(Hash)
+    expect(hash[:route].keys).to include(:routeError, :formattedTime, :boundingBox)
+    expect(hash[:route][:routeError]).to be_a(Hash)
+    expect(hash[:route][:routeError].keys).to include(:errorCode, :message)
+
+    expect(hash[:route][:boundingBox]).to be_a(Hash)
+    expect(hash[:route][:boundingBox].keys).to include(:lr, :ul)
+    expect(hash[:route][:boundingBox][:lr].keys).to include(:lng, :lat)
+    expect(hash[:route][:boundingBox][:ul].keys).to include(:lng, :lat)
+  end
 end
