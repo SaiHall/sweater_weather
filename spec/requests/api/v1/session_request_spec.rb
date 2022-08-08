@@ -4,7 +4,7 @@ RSpec.describe 'User login api call' do
   before(:each) do
     User.create!(email: 'something@special.com', password: "1234", password_confirmation: "1234",  api_key: SecureRandom.hex)
     @user_params = {
-                email: 'Something@special.com',
+                email: 'something@special.com',
                 password: "1234"
               }
       @headers = {"CONTENT_TYPE" => "application/json"}
@@ -51,7 +51,7 @@ RSpec.describe 'User login api call' do
 
     it 'will return an error if password is not correct' do
       bad_params = {
-                  email: 'Something@special.com',
+                  email: 'something@special.com',
                   password: "1235"
                 }
       post "/api/v1/sessions", headers: @headers, params: JSON.generate(bad_params)
@@ -61,6 +61,17 @@ RSpec.describe 'User login api call' do
 
       response_body = JSON.parse(response.body, symbolize_names: true)
       expect(response_body[:message]).to eq("Invalid Credentials")
+    end
+
+    it 'will still log in if casing is different than at creation' do
+      also_good_params = {
+                  email: 'SoMeThINg@specIaL.coM',
+                  password: "1234"
+                }
+      post "/api/v1/sessions", headers: @headers, params: JSON.generate(also_good_params)
+
+      expect(response).to be_successful
+      expect(response.status).to eq(200)
     end
   end
 end
