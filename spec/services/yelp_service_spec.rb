@@ -10,5 +10,11 @@ RSpec.describe YelpService, :vcr do
     expect(returned_hash[:businesses]).to be_an(Array)
     expect(returned_hash[:businesses][0]).to be_a(Hash)
     expect(returned_hash[:businesses][0].keys).to include(:name, :coordinates, :location)
+
+    expect(returned_hash[:businesses][0][:coordinates]).to be_a(Hash)
+    expect(returned_hash[:businesses][0][:coordinates].keys).to include(:latitude, :longitude)
+
+    expect(returned_hash[:businesses][0][:location]).to be_a(Hash)
+    expect(returned_hash[:businesses][0][:location].keys).to include(:address1, :city, :zip_code, :state, :display_address)
   end
 end
