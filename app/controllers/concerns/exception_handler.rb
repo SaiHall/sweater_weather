@@ -8,7 +8,7 @@ module ExceptionHandler
     end
 
     rescue_from ActiveRecord::RecordNotFound do |e|
-      json_response({ message: e.message }, :not_found)
+      json_response({ message: "Invalid Credentials" }, 400)
     end
   end
 end

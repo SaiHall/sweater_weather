@@ -43,10 +43,10 @@ RSpec.describe 'User login api call' do
       post "/api/v1/sessions", headers: @headers, params: JSON.generate(bad_params)
 
       expect(response).to_not be_successful
-      expect(response.status).to eq(404)
+      expect(response.status).to eq(400)
 
       response_body = JSON.parse(response.body, symbolize_names: true)
-      expect(response_body[:message]).to eq("Couldn't find User")
+      expect(response_body[:message]).to eq("Invalid Credentials")
     end
 
     it 'will return an error if password is not correct' do
@@ -55,10 +55,12 @@ RSpec.describe 'User login api call' do
                   password: "1235"
                 }
       post "/api/v1/sessions", headers: @headers, params: JSON.generate(bad_params)
-      binding.pry
 
       expect(response).to_not be_successful
-      expect(response.status).to eq(404)
+      expect(response.status).to eq(400)
+
+      response_body = JSON.parse(response.body, symbolize_names: true)
+      expect(response_body[:message]).to eq("Invalid Credentials")
     end
   end
 end
