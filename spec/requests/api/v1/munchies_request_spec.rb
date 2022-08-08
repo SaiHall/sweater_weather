@@ -17,7 +17,7 @@ RSpec.describe 'Munchies API: location/term' do
     expect(munch).to be_a(Hash)
     expect(munch.keys).to include(:id, :type, :attributes)
 
-    expect(munch[:id]).to eq(nil)
+    expect(munch[:id]).to eq("null")
     expect(munch[:type]).to eq("munchie")
     expect(munch[:attributes]).to be_a(Hash)
 
@@ -33,5 +33,21 @@ RSpec.describe 'Munchies API: location/term' do
     expect(munch[:attributes][:restaurant].keys).to include(:name, :address)
     expect(munch[:attributes][:restaurant][:name]).to be_a(String)
     expect(munch[:attributes][:restaurant][:address]).to be_a(String)
+  end
+
+  describe 'sad path/error handling' do
+    it 'will raise an error if missing a food', :vcr do
+      get "/api/v1/munchies?location=denver,co&food="
+
+      expect(response).to_not be_successful
+      expect(response.status).to eq(400)
+    end
+
+    it 'will raise an error if missing a food', :vcr do
+      get "/api/v1/munchies?location=denver,co"
+
+      expect(response).to_not be_successful
+      expect(response.status).to eq(400)
+    end
   end
 end
