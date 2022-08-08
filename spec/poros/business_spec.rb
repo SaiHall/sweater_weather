@@ -27,6 +27,6 @@ RSpec.describe Business do
   it 'will format a city to include the state' do
 
     expect(@business.city).to eq("Denver, CO")
-    expect(@business.address).to_not eq("Denver")
+    expect(@business.city).to_not eq("Denver")
   end
 end
