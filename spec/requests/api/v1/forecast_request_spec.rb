@@ -70,4 +70,20 @@ RSpec.describe 'Forecast API: City/State' do
     expect(hourly.keys).to_not include(:pressure, :dew_point, :clouds, :wind_speed, :wind_deg, :wind_gust, :humidity, :max_temp, :min_temp, :uvi)
     expect(daily.keys).to_not include(:moonrise, :moonset, :moonphase, :pressure, :humidity, :wind_speed, :wind_deg, :wind_gust, :uvi)
   end
+
+  describe 'sad path, edgecase' do
+    it 'will return an error if no location is given', :vcr do
+      get "/api/v1/forecast?location="
+
+      response_body = JSON.parse(response.body, symbolize_names: true)
+      expect(response_body[:message]).to eq("param is missing or the value is empty: location")
+    end
+
+    it 'will return an error if location is missing', :vcr do
+      get "/api/v1/forecast?"
+
+      response_body = JSON.parse(response.body, symbolize_names: true)
+      expect(response_body[:message]).to eq("param is missing or the value is empty: location")
+    end
+  end
 end
