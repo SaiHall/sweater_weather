@@ -7,4 +7,9 @@ class OpenWeatherFacade
     data3 = json[:hourly][0..7]
     Forecast.new(data1, data2, data3)
   end
+
+  def self.create_current(lat, lon)
+    json = OpenWeatherService.get_forecast(lat, lon)
+    Current.new(json[:current])
+  end
 end
