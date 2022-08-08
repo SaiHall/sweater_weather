@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe YelpService do
+RSpec.describe YelpService, :vcr do
   it 'can return information from a call given a location and search term' do
     returned_hash = YelpService.get_business('denver, co', 'chinese')
 
