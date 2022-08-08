@@ -2,8 +2,7 @@ class Api::V1::UsersController < ApplicationController
   def create
     new_user = User.create!(user_params)
     if new_user.save
-      new_user[:email] = new_user[:email].downcase
-      new_user[:api_key] = SecureRandom.hex if new_user[:api_key].nil?
+      new_user.update(email: new_user[:email].downcase, api_key: SecureRandom.hex)
       render json: UserSerializer.new(new_user), status: :created
     end
   end
