@@ -41,6 +41,8 @@ RSpec.describe 'Munchies API: location/term' do
 
       expect(response).to_not be_successful
       expect(response.status).to eq(400)
+      response_body = JSON.parse(response.body, symbolize_names: true)
+      expect(response_body[:message]).to eq("param is missing or the value is empty: food")
     end
 
     it 'will raise an error if missing a food', :vcr do
@@ -48,6 +50,8 @@ RSpec.describe 'Munchies API: location/term' do
 
       expect(response).to_not be_successful
       expect(response.status).to eq(400)
+      response_body = JSON.parse(response.body, symbolize_names: true)
+      expect(response_body[:message]).to eq("param is missing or the value is empty: food")
     end
 
     it 'will raise an error if missing a location', :vcr do
@@ -55,6 +59,8 @@ RSpec.describe 'Munchies API: location/term' do
 
       expect(response).to_not be_successful
       expect(response.status).to eq(400)
+      response_body = JSON.parse(response.body, symbolize_names: true)
+      expect(response_body[:message]).to eq("param is missing or the value is empty: location")
     end
 
     it 'will raise an error if missing a location', :vcr do
@@ -62,6 +68,8 @@ RSpec.describe 'Munchies API: location/term' do
 
       expect(response).to_not be_successful
       expect(response.status).to eq(400)
+      response_body = JSON.parse(response.body, symbolize_names: true)
+      expect(response_body[:message]).to eq("param is missing or the value is empty: location")
     end
   end
 end
