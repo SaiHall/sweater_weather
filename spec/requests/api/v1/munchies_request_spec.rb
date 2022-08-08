@@ -49,5 +49,19 @@ RSpec.describe 'Munchies API: location/term' do
       expect(response).to_not be_successful
       expect(response.status).to eq(400)
     end
+
+    it 'will raise an error if missing a location', :vcr do
+      get "/api/v1/munchies?location=&food=chinese"
+
+      expect(response).to_not be_successful
+      expect(response.status).to eq(400)
+    end
+
+    it 'will raise an error if missing a location', :vcr do
+      get "/api/v1/munchies?food=chinese"
+
+      expect(response).to_not be_successful
+      expect(response.status).to eq(400)
+    end
   end
 end
