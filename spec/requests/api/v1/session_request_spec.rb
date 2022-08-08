@@ -73,5 +73,59 @@ RSpec.describe 'User login api call' do
       expect(response).to be_successful
       expect(response.status).to eq(200)
     end
+
+    it 'will return an error if no email is provided' do
+      bad_params = {
+                  password: "1235"
+                }
+      post "/api/v1/sessions", headers: @headers, params: JSON.generate(bad_params)
+
+      expect(response).to_not be_successful
+      expect(response.status).to eq(400)
+
+      response_body = JSON.parse(response.body, symbolize_names: true)
+      expect(response_body[:message]).to eq("param is missing or the value is empty: email")
+    end
+
+    it 'will return an error if email is empty' do
+      bad_params = {
+                  email: '',
+                  password: "1235"
+                }
+      post "/api/v1/sessions", headers: @headers, params: JSON.generate(bad_params)
+
+      expect(response).to_not be_successful
+      expect(response.status).to eq(400)
+
+      response_body = JSON.parse(response.body, symbolize_names: true)
+      expect(response_body[:message]).to eq("param is missing or the value is empty: email")
+    end
+
+    it 'will return an error if no password is provided' do
+      bad_params = {
+                  email: 'something@special.com'
+                }
+      post "/api/v1/sessions", headers: @headers, params: JSON.generate(bad_params)
+
+      expect(response).to_not be_successful
+      expect(response.status).to eq(400)
+
+      response_body = JSON.parse(response.body, symbolize_names: true)
+      expect(response_body[:message]).to eq("param is missing or the value is empty: password")
+    end
+
+    it 'will return an error if password is empty' do
+      bad_params = {
+                  email: 'something@special.com',
+                  password: ''
+                }
+      post "/api/v1/sessions", headers: @headers, params: JSON.generate(bad_params)
+
+      expect(response).to_not be_successful
+      expect(response.status).to eq(400)
+
+      response_body = JSON.parse(response.body, symbolize_names: true)
+      expect(response_body[:message]).to eq("param is missing or the value is empty: password")
+    end
   end
 end
