@@ -17,7 +17,11 @@ class RoadTrip
   end
 
   def format_town(data)
-    "#{data[:adminArea5]}, #{data[:adminArea3]}"
+    if data[:adminArea3].blank?
+      "#{data[:adminArea5]} #{data[:adminArea5Type]}, #{data[:adminArea1]}"
+    else
+      "#{data[:adminArea5]}, #{data[:adminArea3]}"
+    end
   end
 
   def format_hours(time)

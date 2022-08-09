@@ -29,4 +29,13 @@ RSpec.describe RoadTrip do
     expect(trip.start).to_not eq("North Port")
     expect(trip.start).to_not eq("FL")
   end
+  it 'will format a differently formatted town correctly' do
+    json = File.read('./spec/fixtures/bad_format_end.json')
+    data = JSON.parse(json, symbolize_names: true)
+
+    trip = RoadTrip.new(data[:route])
+
+    expect(trip.start).to eq('New York, NY')
+    expect(trip.end).to eq('Panama City, PA')
+  end
 end
