@@ -1,24 +1,75 @@
-# README
+# Sweater Weather
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Sweater Weather is designed as a fictional back end to:
+ -Take a location and return a json response of the forecasted weather
+ -To create users
+ -To log in users
+ -Take two locations and return a response containing the estimated travel time, and projected weather at the location. (Requires an api key)
 
-Things you may want to cover:
+## Description
 
-* Ruby version
+Sweater Weather is a back end for a fictional front end who has requested specific end points in the api. Sweater Weather maintains the database, stores users, and handles and reformats external api hits into a format that the front end has requested.
 
-* System dependencies
+## Getting Started
 
-* Configuration
+### Dependencies
+Gems used:
+- In the development, test block please add:
+  ``gem 'rspec-rails'
+    gem 'simplecov'
+    gem 'shoulda-matchers'``
+- At the top level, please uncomment bcrypt and add:
+  ``gem 'faraday'
+    gem 'figaro'
+    gem 'json'``
+- In a test block, please add:
+  ``gem 'vcr'
+    gem 'webmock'``
 
-* Database creation
+### Installing
 
-* Database initialization
+* How/where to download your program
+* Any modifications needed to be made to files/folders
 
-* How to run the test suite
+### Executing program
 
-* Services (job queues, cache servers, search engines, etc.)
+* How to run the program
+* Step-by-step bullets
+```
+code blocks for commands
+```
 
-* Deployment instructions
+## Help
 
-* ...
+Any advise for common problems or issues.
+```
+command to run if program contains helper info
+```
+
+## Authors
+
+Contributors names and contact info
+
+ex. Dominique Pizzie  
+ex. [@DomPizzie](https://twitter.com/dompizzie)
+
+## Version History
+
+* 0.2
+    * Various bug fixes and optimizations
+    * See [commit change]() or See [release history]()
+* 0.1
+    * Initial Release
+
+## License
+
+This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
+
+## Acknowledgments
+
+Inspiration, code snippets, etc.
+* [awesome-readme](https://github.com/matiassingers/awesome-readme)
+* [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
+* [dbader](https://github.com/dbader/readme-template)
+* [zenorocha](https://gist.github.com/zenorocha/4526327)
+* [fvcproductions](https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46)
