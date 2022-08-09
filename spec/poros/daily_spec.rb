@@ -16,6 +16,7 @@ RSpec.describe Daily do
     expect(@day.conditions).to eq("clear sky")
     expect(@day.max_temp).to eq(88.952)
     expect(@day.min_temp).to eq(69.026)
+    expect(@day.temperature).to eq(78.989)
     expect(@day.icon).to eq("01d")
   end
 
@@ -37,5 +38,12 @@ RSpec.describe Daily do
 
     expect(@day.max_temp).to_not eq(304.79)
     expect(@day.min_temp).to_not eq(293.72)
+  end
+
+  it 'can average temperatures together' do
+
+    expect(@day.temperature).to eq(78.989)
+    expect(@day.temperature).to_not eq(88.952)
+    expect(@day.temperature).to_not eq(69.026)
   end
 end
