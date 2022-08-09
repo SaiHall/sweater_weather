@@ -8,6 +8,10 @@ class GeoFacade
 
   def self.create_directions(origin, destination)
     json = GeoService.get_directions(origin, destination)
-    RoadTrip.new(json[:route])
+    if json[:route][:routeError]
+      "impossible route"
+    else
+      RoadTrip.new(json[:route])
+    end
   end
 end
