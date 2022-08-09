@@ -1,6 +1,6 @@
 class BaseService
   def self.conn_geo
-    Faraday.new(url: "http://www.mapquestapi.com/geocoding/v1/") do |req|
+    Faraday.new(url: "http://www.mapquestapi.com/") do |req|
       req.params['key'] = ENV['GEO_API_KEY']
     end
   end

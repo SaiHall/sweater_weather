@@ -7,7 +7,8 @@ class Daily
               :max_temp,
               :min_temp,
               :conditions,
-              :icon
+              :icon,
+              :temperature
 
   def initialize(data)
     @date = format_date_only(data[:dt])
@@ -17,5 +18,10 @@ class Daily
     @min_temp = format_temp(data[:temp][:min])
     @conditions = data[:weather][0][:description]
     @icon = data[:weather][0][:icon]
+    @temperature = avg_temp(@max_temp, @min_temp)
+  end
+
+  def avg_temp(max, min)
+    (max + min) / 2
   end
 end
