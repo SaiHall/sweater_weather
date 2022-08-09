@@ -1,0 +1,24 @@
+{
+    "dt": 1659822743,
+    "sunrise": 1659780037,
+    "sunset": 1659831620,
+    "temp": 303.41,
+    "feels_like": 307.37,
+    "pressure": 1018,
+    "humidity": 64,
+    "dew_point": 295.84,
+    "uvi": 1.1,
+    "clouds": 88,
+    "visibility": 10000,
+    "wind_speed": 2.24,
+    "wind_deg": 180,
+    "wind_gust": 5.36,
+    "weather": [
+        {
+            "id": 804,
+            "main": "Clouds",
+            "description": "overcast clouds",
+            "icon": "04d"
+        }
+    ]
+}
