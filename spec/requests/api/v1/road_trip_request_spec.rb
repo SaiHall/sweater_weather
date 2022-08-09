@@ -41,4 +41,37 @@ RSpec.describe 'Road trip call', :vcr do
     expect(roadtrip[:attributes][:weather_at_eta][:temperature]).to be_an(Integer).or be_a(Float)
     expect(roadtrip[:attributes][:weather_at_eta][:conditions]).to be_a(String)
   end
+
+  describe 'sad path, edgecase' do
+    it 'will return an error if no start location is provided' do
+      bad_parameters = {
+                    origin: "",
+                    destination: "Pueblo, CO",
+                    api_key: "79012744298e72fbb257d621cbbde7ca"
+                    }
+
+      post "/api/v1/road_trip", headers: @headers, params: JSON.generate(bad_parameters)
+
+      expect(response).to_not be_successful
+      expect(response.status).to eq(400)
+
+      response_body = JSON.parse(response.body, symbolize_names: true)
+      expect(response_body[:message]).to eq("param is missing or the value is empty: origin")
+    end
+
+    it 'will return an error if start location is missing' do
+      bad_parameters = {
+                    destination: "Pueblo, CO",
+                    api_key: "79012744298e72fbb257d621cbbde7ca"
+                    }
+
+      post "/api/v1/road_trip", headers: @headers, params: JSON.generate(bad_parameters)
+
+      expect(response).to_not be_successful
+      expect(response.status).to eq(400)
+
+      response_body = JSON.parse(response.body, symbolize_names: true)
+      expect(response_body[:message]).to eq("param is missing or the value is empty: origin")
+    end
+  end
 end
