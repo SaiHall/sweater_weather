@@ -1,0 +1,30 @@
+{
+  "street": "",
+  "adminArea6": "",
+  "adminArea6Type": "Neighborhood",
+  "adminArea5": "Syracuse",
+  "adminArea5Type": "City",
+  "adminArea4": "Onondaga County",
+  "adminArea4Type": "County",
+  "adminArea3": "NY",
+  "adminArea3Type": "State",
+  "adminArea1": "US",
+  "adminArea1Type": "Country",
+  "postalCode": "",
+  "geocodeQualityCode": "A5XAX",
+  "geocodeQuality": "CITY",
+  "dragPoint": false,
+  "sideOfStreet": "N",
+  "linkId": "282039139",
+  "unknownInput": "",
+  "type": "s",
+  "latLng": {
+      "lat": 43.047945,
+      "lng": -76.147448
+    },
+    "displayLatLng": {
+      "lat": 43.047945,
+      "lng": -76.147448
+    },
+    "mapUrl": "http://www.mapquestapi.com/staticmap/v5/map?key=jlVoe5RkpFf6GM1uje4kYG0P143RqWCt&type=map&size=225,160&locations=43.047945,-76.147448|marker-sm-50318A-1&scalebar=true&zoom=12&rand=-215745909"
+}

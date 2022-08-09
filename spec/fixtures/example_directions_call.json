@@ -1,0 +1,526 @@
+{
+    "route": {
+        "hasTollRoad": false,
+        "hasBridge": true,
+        "boundingBox": {
+            "lr": {
+                "lng": -82.235992,
+                "lat": 27.041864
+            },
+            "ul": {
+                "lng": -90.079575,
+                "lat": 30.26137
+            }
+        },
+        "distance": 733.6591,
+        "hasTimedRestriction": false,
+        "hasTunnel": true,
+        "hasHighway": true,
+        "computedWaypoints": [],
+        "routeError": {
+            "errorCode": -400,
+            "message": ""
+        },
+        "formattedTime": "10:45:03",
+        "sessionId": "62f1910a-02d7-6750-02b4-3936-0a684cc7f20f",
+        "hasAccessRestriction": false,
+        "realTime": 38830,
+        "hasSeasonalClosure": false,
+        "hasCountryCross": false,
+        "fuelUsed": 36.14,
+        "legs": [
+            {
+                "hasTollRoad": false,
+                "hasBridge": true,
+                "destNarrative": "Proceed to NEW ORLEANS, LA.",
+                "distance": 733.6591,
+                "hasTimedRestriction": false,
+                "hasTunnel": true,
+                "hasHighway": true,
+                "index": 0,
+                "formattedTime": "10:45:03",
+                "origIndex": 1,
+                "hasAccessRestriction": false,
+                "hasSeasonalClosure": false,
+                "hasCountryCross": false,
+                "roadGradeStrategy": [
+                    []
+                ],
+                "destIndex": 6,
+                "time": 38703,
+                "hasUnpaved": false,
+                "origNarrative": "Go west on Tamiami Trl/Tamiami Trl/US-41 N/FL-45.",
+                "maneuvers": [
+                    {
+                        "distance": 0.116,
+                        "streets": [
+                            "N Port Blvd"
+                        ],
+                        "narrative": "Start out going north on N Port Blvd toward Tamiami Trl.",
+                        "turnType": 0,
+                        "startPoint": {
+                            "lng": -82.236679,
+                            "lat": 27.042196
+                        },
+                        "index": 0,
+                        "formattedTime": "00:00:28",
+                        "directionName": "North",
+                        "maneuverNotes": [],
+                        "linkIds": [],
+                        "signs": [],
+                        "mapUrl": "http://www.mapquestapi.com/staticmap/v5/map?key=jlVoe5RkpFf6GM1uje4kYG0P143RqWCt&size=225,160&locations=27.04219627380371,-82.23667907714844|marker-1||27.04375648498535,-82.23599243164062|marker-2||&center=27.04297637939453,-82.23633575439453&defaultMarker=none&zoom=13&rand=-586732213&session=62f1910a-02d7-6750-02b4-3936-0a684cc7f20f",
+                        "transportMode": "AUTO",
+                        "attributes": 0,
+                        "time": 28,
+                        "iconUrl": "http://content.mqcdn.com/mqsite/turnsigns/icon-dirs-start_sm.gif",
+                        "direction": 1
+                    },
+                    {
+                        "distance": 4.1,
+                        "streets": [
+                            "Tamiami Trl",
+                            "Tamiami Trl",
+                            "US-41 N",
+                            "FL-45"
+                        ],
+                        "narrative": "Turn left onto Tamiami Trl/Tamiami Trl/US-41 N/FL-45.",
+                        "turnType": 6,
+                        "startPoint": {
+                            "lng": -82.235992,
+                            "lat": 27.043756
+                        },
+                        "index": 1,
+                        "formattedTime": "00:05:12",
+                        "directionName": "West",
+                        "maneuverNotes": [],
+                        "linkIds": [],
+                        "signs": [
+                            {
+                                "extraText": "",
+                                "text": "41",
+                                "type": 2,
+                                "url": "http://icons.mqcdn.com/icons/rs2.png?n=41&d=NORTH",
+                                "direction": 1
+                            },
+                            {
+                                "extraText": "",
+                                "text": "45",
+                                "type": 508,
+                                "url": "http://icons.mqcdn.com/icons/rs508.png?n=45",
+                                "direction": 0
+                            }
+                        ],
+                        "mapUrl": "http://www.mapquestapi.com/staticmap/v5/map?key=jlVoe5RkpFf6GM1uje4kYG0P143RqWCt&size=225,160&locations=27.04375648498535,-82.23599243164062|marker-2||27.0418643951416,-82.30010986328125|marker-3||&center=27.042810440063477,-82.26805114746094&defaultMarker=none&zoom=8&rand=-586732213&session=62f1910a-02d7-6750-02b4-3936-0a684cc7f20f",
+                        "transportMode": "AUTO",
+                        "attributes": 1024,
+                        "time": 312,
+                        "iconUrl": "http://content.mqcdn.com/mqsite/turnsigns/rs_left_sm.gif",
+                        "direction": 7
+                    },
+                    {
+                        "distance": 5.637,
+                        "streets": [
+                            "N River Rd"
+                        ],
+                        "narrative": "Turn right onto N River Rd.",
+                        "turnType": 2,
+                        "startPoint": {
+                            "lng": -82.30011,
+                            "lat": 27.041864
+                        },
+                        "index": 2,
+                        "formattedTime": "00:07:54",
+                        "directionName": "Northwest",
+                        "maneuverNotes": [],
+                        "linkIds": [],
+                        "signs": [],
+                        "mapUrl": "http://www.mapquestapi.com/staticmap/v5/map?key=jlVoe5RkpFf6GM1uje4kYG0P143RqWCt&size=225,160&locations=27.0418643951416,-82.30010986328125|marker-3||27.110870361328125,-82.34833526611328|marker-4||&center=27.076367378234863,-82.32422256469727&defaultMarker=none&zoom=7&rand=-586732213&session=62f1910a-02d7-6750-02b4-3936-0a684cc7f20f",
+                        "transportMode": "AUTO",
+                        "attributes": 0,
+                        "time": 474,
+                        "iconUrl": "http://content.mqcdn.com/mqsite/turnsigns/rs_right_sm.gif",
+                        "direction": 2
+                    },
+                    {
+                        "distance": 0.023,
+                        "streets": [],
+                        "narrative": "Turn slight left to take the I-75 N ramp toward Tampa.",
+                        "turnType": 13,
+                        "startPoint": {
+                            "lng": -82.348335,
+                            "lat": 27.11087
+                        },
+                        "index": 3,
+                        "formattedTime": "00:00:08",
+                        "directionName": "Northwest",
+                        "maneuverNotes": [],
+                        "linkIds": [],
+                        "signs": [],
+                        "mapUrl": "http://www.mapquestapi.com/staticmap/v5/map?key=jlVoe5RkpFf6GM1uje4kYG0P143RqWCt&size=225,160&locations=27.110870361328125,-82.34833526611328|marker-4||27.111045837402344,-82.34864807128906|marker-5||&center=27.110958099365234,-82.34849166870117&defaultMarker=none&zoom=15&rand=-586732213&session=62f1910a-02d7-6750-02b4-3936-0a684cc7f20f",
+                        "transportMode": "AUTO",
+                        "attributes": 0,
+                        "time": 8,
+                        "iconUrl": "http://content.mqcdn.com/mqsite/turnsigns/rs_ramp_sm.gif",
+                        "direction": 2
+                    },
+                    {
+                        "distance": 243.623,
+                        "streets": [
+                            "I-75 N"
+                        ],
+                        "narrative": "Merge onto I-75 N via the ramp on the left.",
+                        "turnType": 11,
+                        "startPoint": {
+                            "lng": -82.348648,
+                            "lat": 27.111046
+                        },
+                        "index": 4,
+                        "formattedTime": "03:30:53",
+                        "directionName": "North",
+                        "maneuverNotes": [],
+                        "linkIds": [],
+                        "signs": [
+                            {
+                                "extraText": "",
+                                "text": "75",
+                                "type": 1,
+                                "url": "http://icons.mqcdn.com/icons/rs1.png?n=75&d=NORTH",
+                                "direction": 1
+                            }
+                        ],
+                        "mapUrl": "http://www.mapquestapi.com/staticmap/v5/map?key=jlVoe5RkpFf6GM1uje4kYG0P143RqWCt&size=225,160&locations=27.111045837402344,-82.34864807128906|marker-5||30.261369705200195,-82.75122833251953|marker-6||&center=28.68620777130127,-82.5499382019043&defaultMarker=none&zoom=2&rand=-586732213&session=62f1910a-02d7-6750-02b4-3936-0a684cc7f20f",
+                        "transportMode": "AUTO",
+                        "attributes": 1152,
+                        "time": 12653,
+                        "iconUrl": "http://content.mqcdn.com/mqsite/turnsigns/rs_merge_left_sm.gif",
+                        "direction": 1
+                    },
+                    {
+                        "distance": 478.677,
+                        "streets": [
+                            "I-10 W"
+                        ],
+                        "narrative": "Merge onto I-10 W via EXIT 435 toward Tallahassee (Passing through Alabama and Mississippi, then crossing into Louisiana).",
+                        "turnType": 10,
+                        "startPoint": {
+                            "lng": -82.751228,
+                            "lat": 30.26137
+                        },
+                        "index": 5,
+                        "formattedTime": "06:57:14",
+                        "directionName": "West",
+                        "maneuverNotes": [],
+                        "linkIds": [],
+                        "signs": [
+                            {
+                                "extraText": "",
+                                "text": "10",
+                                "type": 1,
+                                "url": "http://icons.mqcdn.com/icons/rs1.png?n=10&d=WEST",
+                                "direction": 7
+                            },
+                            {
+                                "extraText": "",
+                                "text": "435",
+                                "type": 1001,
+                                "url": "http://icons.mqcdn.com/icons/rs1001.png?n=435&d=RIGHT",
+                                "direction": 0
+                            }
+                        ],
+                        "mapUrl": "http://www.mapquestapi.com/staticmap/v5/map?key=jlVoe5RkpFf6GM1uje4kYG0P143RqWCt&size=225,160&locations=30.261369705200195,-82.75122833251953|marker-6||29.957984924316406,-90.07888793945312|marker-7||&center=30.1096773147583,-86.41505813598633&defaultMarker=none&zoom=2&rand=-586732213&session=62f1910a-02d7-6750-02b4-3936-0a684cc7f20f",
+                        "transportMode": "AUTO",
+                        "attributes": 3200,
+                        "time": 25034,
+                        "iconUrl": "http://content.mqcdn.com/mqsite/turnsigns/rs_merge_right_sm.gif",
+                        "direction": 7
+                    },
+                    {
+                        "distance": 0.145,
+                        "streets": [],
+                        "narrative": "Take EXIT 235B toward Superdome/Canal St.",
+                        "turnType": 14,
+                        "startPoint": {
+                            "lng": -90.078888,
+                            "lat": 29.957985
+                        },
+                        "index": 6,
+                        "formattedTime": "00:00:14",
+                        "directionName": "North",
+                        "maneuverNotes": [],
+                        "linkIds": [],
+                        "signs": [
+                            {
+                                "extraText": "",
+                                "text": "235B",
+                                "type": 1001,
+                                "url": "http://icons.mqcdn.com/icons/rs1001.png?n=235B&d=RIGHT",
+                                "direction": 0
+                            }
+                        ],
+                        "mapUrl": "http://www.mapquestapi.com/staticmap/v5/map?key=jlVoe5RkpFf6GM1uje4kYG0P143RqWCt&size=225,160&locations=29.957984924316406,-90.07888793945312|marker-7||29.958799362182617,-90.07957458496094|marker-8||&center=29.95839214324951,-90.07923126220703&defaultMarker=none&zoom=14&rand=-586732213&session=62f1910a-02d7-6750-02b4-3936-0a684cc7f20f",
+                        "transportMode": "AUTO",
+                        "attributes": 0,
+                        "time": 14,
+                        "iconUrl": "http://content.mqcdn.com/mqsite/turnsigns/rs_gr_exitright_sm.gif",
+                        "direction": 1
+                    },
+                    {
+                        "distance": 0.084,
+                        "streets": [
+                            "Cleveland Ave"
+                        ],
+                        "narrative": "Turn right onto Cleveland Ave.",
+                        "turnType": 2,
+                        "startPoint": {
+                            "lng": -90.079575,
+                            "lat": 29.958799
+                        },
+                        "index": 7,
+                        "formattedTime": "00:00:09",
+                        "directionName": "Southeast",
+                        "maneuverNotes": [],
+                        "linkIds": [],
+                        "signs": [],
+                        "mapUrl": "http://www.mapquestapi.com/staticmap/v5/map?key=jlVoe5RkpFf6GM1uje4kYG0P143RqWCt&size=225,160&locations=29.958799362182617,-90.07957458496094|marker-8||29.958036422729492,-90.07849884033203|marker-9||&center=29.958417892456055,-90.07903671264648&defaultMarker=none&zoom=14&rand=-586732213&session=62f1910a-02d7-6750-02b4-3936-0a684cc7f20f",
+                        "transportMode": "AUTO",
+                        "attributes": 0,
+                        "time": 9,
+                        "iconUrl": "http://content.mqcdn.com/mqsite/turnsigns/rs_right_sm.gif",
+                        "direction": 5
+                    },
+                    {
+                        "distance": 0.075,
+                        "streets": [
+                            "S Claiborne Ave",
+                            "LA-39"
+                        ],
+                        "narrative": "Turn left onto S Claiborne Ave/LA-39.",
+                        "turnType": 6,
+                        "startPoint": {
+                            "lng": -90.078499,
+                            "lat": 29.958036
+                        },
+                        "index": 8,
+                        "formattedTime": "00:00:11",
+                        "directionName": "Northeast",
+                        "maneuverNotes": [],
+                        "linkIds": [],
+                        "signs": [
+                            {
+                                "extraText": "",
+                                "text": "39",
+                                "type": 517,
+                                "url": "http://icons.mqcdn.com/icons/rs517.png?n=39",
+                                "direction": 0
+                            }
+                        ],
+                        "mapUrl": "http://www.mapquestapi.com/staticmap/v5/map?key=jlVoe5RkpFf6GM1uje4kYG0P143RqWCt&size=225,160&locations=29.958036422729492,-90.07849884033203|marker-9||29.958913803100586,-90.07775115966797|marker-10||&center=29.95847511291504,-90.078125&defaultMarker=none&zoom=14&rand=-586732213&session=62f1910a-02d7-6750-02b4-3936-0a684cc7f20f",
+                        "transportMode": "AUTO",
+                        "attributes": 0,
+                        "time": 11,
+                        "iconUrl": "http://content.mqcdn.com/mqsite/turnsigns/rs_left_sm.gif",
+                        "direction": 3
+                    },
+                    {
+                        "distance": 0.653,
+                        "streets": [
+                            "Canal St"
+                        ],
+                        "narrative": "Turn right onto Canal St.",
+                        "turnType": 2,
+                        "startPoint": {
+                            "lng": -90.077751,
+                            "lat": 29.958914
+                        },
+                        "index": 9,
+                        "formattedTime": "00:01:30",
+                        "directionName": "Southeast",
+                        "maneuverNotes": [],
+                        "linkIds": [],
+                        "signs": [],
+                        "mapUrl": "http://www.mapquestapi.com/staticmap/v5/map?key=jlVoe5RkpFf6GM1uje4kYG0P143RqWCt&size=225,160&locations=29.958913803100586,-90.07775115966797|marker-10||29.953088760375977,-90.06916809082031|marker-11||&center=29.95600128173828,-90.07345962524414&defaultMarker=none&zoom=10&rand=-586732213&session=62f1910a-02d7-6750-02b4-3936-0a684cc7f20f",
+                        "transportMode": "AUTO",
+                        "attributes": 0,
+                        "time": 90,
+                        "iconUrl": "http://content.mqcdn.com/mqsite/turnsigns/rs_right_sm.gif",
+                        "direction": 5
+                    },
+                    {
+                        "distance": 0.255,
+                        "streets": [
+                            "Saint Charles Ave"
+                        ],
+                        "narrative": "Turn right onto Saint Charles Ave.",
+                        "turnType": 2,
+                        "startPoint": {
+                            "lng": -90.069168,
+                            "lat": 29.953089
+                        },
+                        "index": 10,
+                        "formattedTime": "00:00:35",
+                        "directionName": "South",
+                        "maneuverNotes": [],
+                        "linkIds": [],
+                        "signs": [],
+                        "mapUrl": "http://www.mapquestapi.com/staticmap/v5/map?key=jlVoe5RkpFf6GM1uje4kYG0P143RqWCt&size=225,160&locations=29.953088760375977,-90.06916809082031|marker-11||29.94963836669922,-90.0705795288086|marker-12||&center=29.951363563537598,-90.06987380981445&defaultMarker=none&zoom=11&rand=-586732213&session=62f1910a-02d7-6750-02b4-3936-0a684cc7f20f",
+                        "transportMode": "AUTO",
+                        "attributes": 0,
+                        "time": 35,
+                        "iconUrl": "http://content.mqcdn.com/mqsite/turnsigns/rs_right_sm.gif",
+                        "direction": 4
+                    },
+                    {
+                        "distance": 0.271,
+                        "streets": [
+                            "Poydras St"
+                        ],
+                        "narrative": "Turn right onto Poydras St.",
+                        "turnType": 2,
+                        "startPoint": {
+                            "lng": -90.07058,
+                            "lat": 29.949638
+                        },
+                        "index": 11,
+                        "formattedTime": "00:00:35",
+                        "directionName": "West",
+                        "maneuverNotes": [],
+                        "linkIds": [],
+                        "signs": [],
+                        "mapUrl": "http://www.mapquestapi.com/staticmap/v5/map?key=jlVoe5RkpFf6GM1uje4kYG0P143RqWCt&size=225,160&locations=29.94963836669922,-90.0705795288086|marker-12||29.95062255859375,-90.074951171875|marker-13||&center=29.950130462646484,-90.0727653503418&defaultMarker=none&zoom=12&rand=-586732213&session=62f1910a-02d7-6750-02b4-3936-0a684cc7f20f",
+                        "transportMode": "AUTO",
+                        "attributes": 0,
+                        "time": 35,
+                        "iconUrl": "http://content.mqcdn.com/mqsite/turnsigns/rs_right_sm.gif",
+                        "direction": 7
+                    },
+                    {
+                        "distance": 0,
+                        "streets": [],
+                        "narrative": "Welcome to NEW ORLEANS, LA.",
+                        "turnType": -1,
+                        "startPoint": {
+                            "lng": -90.074951,
+                            "lat": 29.950623
+                        },
+                        "index": 12,
+                        "formattedTime": "00:00:00",
+                        "directionName": "",
+                        "maneuverNotes": [],
+                        "linkIds": [],
+                        "signs": [],
+                        "transportMode": "AUTO",
+                        "attributes": 0,
+                        "time": 0,
+                        "iconUrl": "http://content.mqcdn.com/mqsite/turnsigns/icon-dirs-end_sm.gif",
+                        "direction": 0
+                    }
+                ],
+                "hasFerry": false
+            }
+        ],
+        "options": {
+            "arteryWeights": [],
+            "cyclingRoadFactor": 1,
+            "timeType": 0,
+            "useTraffic": false,
+            "returnLinkDirections": false,
+            "countryBoundaryDisplay": true,
+            "enhancedNarrative": false,
+            "locale": "en_US",
+            "tryAvoidLinkIds": [],
+            "drivingStyle": 2,
+            "doReverseGeocode": true,
+            "generalize": -1,
+            "mustAvoidLinkIds": [],
+            "sideOfStreetDisplay": true,
+            "routeType": "FASTEST",
+            "avoidTimedConditions": false,
+            "routeNumber": 0,
+            "shapeFormat": "raw",
+            "maxWalkingDistance": -1,
+            "destinationManeuverDisplay": true,
+            "transferPenalty": -1,
+            "narrativeType": "text",
+            "walkingSpeed": -1,
+            "urbanAvoidFactor": -1,
+            "stateBoundaryDisplay": true,
+            "unit": "M",
+            "highwayEfficiency": 22,
+            "maxLinkId": 0,
+            "maneuverPenalty": -1,
+            "avoidTripIds": [],
+            "filterZoneFactor": -1,
+            "manmaps": "true"
+        },
+        "locations": [
+            {
+                "dragPoint": false,
+                "displayLatLng": {
+                    "lng": -82.236679,
+                    "lat": 27.042196
+                },
+                "adminArea4": "Sarasota County",
+                "adminArea5": "North Port",
+                "postalCode": "",
+                "adminArea1": "US",
+                "adminArea3": "FL",
+                "type": "s",
+                "sideOfStreet": "N",
+                "geocodeQualityCode": "A5XAX",
+                "adminArea4Type": "County",
+                "linkId": 15278339,
+                "street": "",
+                "adminArea5Type": "City",
+                "geocodeQuality": "CITY",
+                "adminArea1Type": "Country",
+                "adminArea3Type": "State",
+                "latLng": {
+                    "lng": -82.236681,
+                    "lat": 27.042196
+                }
+            },
+            {
+                "dragPoint": false,
+                "displayLatLng": {
+                    "lng": -90.074951,
+                    "lat": 29.950621
+                },
+                "adminArea4": "Orleans Parish",
+                "adminArea5": "New Orleans",
+                "postalCode": "",
+                "adminArea1": "US",
+                "adminArea3": "LA",
+                "type": "s",
+                "sideOfStreet": "N",
+                "geocodeQualityCode": "A5XAX",
+                "adminArea4Type": "County",
+                "linkId": 58684079,
+                "street": "",
+                "adminArea5Type": "City",
+                "geocodeQuality": "CITY",
+                "adminArea1Type": "Country",
+                "adminArea3Type": "State",
+                "latLng": {
+                    "lng": -90.074948,
+                    "lat": 29.950621
+                }
+            }
+        ],
+        "time": 38703,
+        "hasUnpaved": false,
+        "locationSequence": [
+            0,
+            1
+        ],
+        "hasFerry": false
+    },
+    "info": {
+        "statuscode": 0,
+        "copyright": {
+            "imageAltText": "© 2022 MapQuest, Inc.",
+            "imageUrl": "http://api.mqcdn.com/res/mqlogo.gif",
+            "text": "© 2022 MapQuest, Inc."
+        },
+        "messages": []
+    }
+}
