@@ -1,9 +1,10 @@
 class Api::V1::RoadTripController < ApplicationController
 
   def create
-    json_response({message: "Unauthorized Request"}, 401) if !trip_params[:api_key] || !User.valid_key?(trip_params[:api_key])
     trip = GeoFacade.create_directions(trip_params[:origin], trip_params[:destination])
-    if trip == "impossible route"
+    if !trip_params[:api_key] || !User.valid_key?(trip_params[:api_key])
+      json_response({message: "Unauthorized Request"}, 401)
+    elsif trip == "impossible route"
       render json: RoadTripSerializer.format_impossible_route(trip_params[:origin], trip_params[:destination])
     else
       forecast = OpenWeatherFacade.create_future_weather(trip.lat, trip.lon, trip.hours)
