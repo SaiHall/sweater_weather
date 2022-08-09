@@ -1,9 +1,9 @@
 class Api::V1::RoadTripController < ApplicationController
 
   def create
-    # trip = GeoFacade.create_directions(trip_params[:origin], trip_params[:destination])
-    # forecast = OpenWeatherFacade.get_future_weather(trip.lat, lat.lon)
-    render json: RoadTripSerializer.format_road_trip
+    trip = GeoFacade.create_directions(trip_params[:origin], trip_params[:destination])
+    forecast = OpenWeatherFacade.create_future_weather(trip.lat, trip.lon, trip.hours)
+    render json: RoadTripSerializer.format_road_trip(trip, forecast)
   end
 
   private
