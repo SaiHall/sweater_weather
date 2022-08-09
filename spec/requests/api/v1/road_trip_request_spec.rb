@@ -115,10 +115,10 @@ RSpec.describe 'Road trip call', :vcr do
       post "/api/v1/road_trip", headers: @headers, params: JSON.generate(bad_parameters)
 
       expect(response).to_not be_successful
-      expect(response.status).to eq(400)
+      expect(response.status).to eq(401)
 
       response_body = JSON.parse(response.body, symbolize_names: true)
-      expect(response_body[:message]).to eq("param is missing or the value is empty: api_key")
+      expect(response_body[:message]).to eq("Unauthorized Request")
     end
 
     it 'will return an error if api key is missing' do
@@ -130,10 +130,10 @@ RSpec.describe 'Road trip call', :vcr do
       post "/api/v1/road_trip", headers: @headers, params: JSON.generate(bad_parameters)
 
       expect(response).to_not be_successful
-      expect(response.status).to eq(400)
+      expect(response.status).to eq(401)
 
       response_body = JSON.parse(response.body, symbolize_names: true)
-      expect(response_body[:message]).to eq("param is missing or the value is empty: api_key")
+      expect(response_body[:message]).to eq("Unauthorized Request")
     end
 
     it 'will return an error if api key in invalid' do
@@ -146,10 +146,10 @@ RSpec.describe 'Road trip call', :vcr do
       post "/api/v1/road_trip", headers: @headers, params: JSON.generate(bad_parameters)
 
       expect(response).to_not be_successful
-      expect(response.status).to eq(400)
+      expect(response.status).to eq(401)
 
       response_body = JSON.parse(response.body, symbolize_names: true)
-      expect(response_body[:message]).to eq("Invalid Credentials")
+      expect(response_body[:message]).to eq("Unauthorized Request")
     end
   end
 end
