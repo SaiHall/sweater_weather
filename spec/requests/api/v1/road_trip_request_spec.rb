@@ -151,5 +151,35 @@ RSpec.describe 'Road trip call', :vcr do
       response_body = JSON.parse(response.body, symbolize_names: true)
       expect(response_body[:message]).to eq("Unauthorized Request")
     end
+
+    it 'will return an impossible route response if given a trip that is impossible' do
+      parameters = {
+                    origin: "Denver, CO",
+                    destination: "Yokohama, Japan",
+                    api_key: "79012744298e72fbb257d621cbbde7ca"
+                    }
+
+      post "/api/v1/road_trip", headers: @headers, params: JSON.generate(parameters)
+
+      response_body = JSON.parse(response.body, symbolize_names: true)
+      roadtrip = response_body[:data]
+
+      expect(roadtrip).to be_a(Hash)
+      expect(roadtrip.keys).to include(:id, :type, :attributes)
+      expect(roadtrip[:id]).to eq(nil)
+      expect(roadtrip[:type]).to eq("roadtrip")
+      expect(roadtrip[:attributes]).to be_a(Hash)
+
+      expect(roadtrip[:attributes].keys).to include(:start_city, :end_city, :travel_time, :weather_at_eta)
+      expect(roadtrip[:attributes][:start_city]).to be_a(String)
+      expect(roadtrip[:attributes][:end_city]).to be_a(String)
+      expect(roadtrip[:attributes][:start_city]).to eq("Denver, CO")
+      expect(roadtrip[:attributes][:end_city]).to eq("Yokohama, Japan")
+
+      expect(roadtrip[:attributes][:travel_time]).to eq("impossible route")
+      expect(roadtrip[:attributes][:weather_at_eta]).to be_a(Hash)
+      expect(roadtrip[:attributes][:weather_at_eta].blank?).to eq(true)
+      expect(roadtrip[:attributes][:weather_at_eta].keys).to_not include(:temperature, :conditions)
+    end
   end
 end
