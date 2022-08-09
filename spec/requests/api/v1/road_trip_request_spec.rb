@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe 'Road trip call' do
+RSpec.describe 'Road trip call', :vcr do
   before(:each) do
-    x = User.create!(email: 'something@special.com', password: "1234", password_confirmation: "1234",  api_key: "79012744298e72fbb257d621cbbde7ca")
+    User.create!(email: 'something@special.com', password: "1234", password_confirmation: "1234",  api_key: "79012744298e72fbb257d621cbbde7ca")
     @parameters = {
                   origin: "Denver, CO",
                   destination: "Pueblo, CO",

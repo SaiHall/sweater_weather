@@ -11,7 +11,7 @@ RSpec.describe RoadTrip do
     expect(trip.time).to eq("10:45:03")
     expect(trip.start).to eq("North Port, FL")
     expect(trip.end).to eq("New Orleans, LA")
-    expect(trip.lon).to eq(-90.079575)
-    expect(trip.lat).to eq(30.26137)
+    expect(trip.lon).to eq(-90.074951)
+    expect(trip.lat).to eq(29.950621)
   end
 end

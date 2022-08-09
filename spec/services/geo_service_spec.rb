@@ -23,9 +23,11 @@ RSpec.describe GeoService, :vcr do
     expect(hash[:route][:routeError]).to be_a(Hash)
     expect(hash[:route][:routeError].keys).to include(:errorCode, :message)
 
-    expect(hash[:route][:boundingBox]).to be_a(Hash)
-    expect(hash[:route][:boundingBox].keys).to include(:lr, :ul)
-    expect(hash[:route][:boundingBox][:lr].keys).to include(:lng, :lat)
-    expect(hash[:route][:boundingBox][:ul].keys).to include(:lng, :lat)
+    expect(hash[:route][:locations]).to be_a(Array)
+    expect(hash[:route][:locations][0]).to be_a(Hash)
+    expect(hash[:route][:locations][0].keys).to include(:adminArea5, :adminArea3, :displayLatLng)
+    expect(hash[:route][:locations][1]).to be_a(Hash)
+    expect(hash[:route][:locations][1].keys).to include(:adminArea5, :adminArea3, :displayLatLng)
+    expect(hash[:route][:locations][1][:displayLatLng]).to include(:lng, :lat)
   end
 end
