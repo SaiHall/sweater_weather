@@ -78,6 +78,8 @@ In your config folder, an application.yml was created by installing figaro above
 ``
 GEO_API_KEY: 'your map quest goes here'
 ``
+
+
 ``
 OW_API_KEY: 'your open weather key goes here'
 ``
