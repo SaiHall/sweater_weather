@@ -1,10 +1,11 @@
 # Sweater Weather
 
 Sweater Weather is designed as a fictional back end to:
- -Take a location and return a json response of the forecasted weather
- -To create users
- -To log in users
- -Take two locations and return a response containing the estimated travel time, and projected weather at the location. (Requires an api key)
+
+ - Take a location and return a json response of the forecasted weather
+ - To create users
+ - To log in users
+ - Take two locations and return a response containing the estimated travel time, and projected weather at the location. (Requires an api key)
 
 ## Description
 
@@ -15,61 +16,74 @@ Sweater Weather is a back end for a fictional front end who has requested specif
 ### Dependencies
 Gems used:
 - In the development, test block please add:
+
+
   ``gem 'rspec-rails'
     gem 'simplecov'
     gem 'shoulda-matchers'``
+    
+    
 - At the top level, please uncomment bcrypt and add:
+
+
   ``gem 'faraday'
     gem 'figaro'
     gem 'json'``
+    
+    
 - In a test block, please add:
+
+
   ``gem 'vcr'
     gem 'webmock'``
+    
+After adding all the gems listed above please be sure to run:
+
+``
+$ bundle install
+``
+``
+$ bundle exec rspec:install
+``
+``
+$ bundle exec figaro install
+``
+``
+$ rails generate rspec:install
+``
+
+You will also need to run:
+``
+$ rails db:{drop,create,migrate}
+``
 
 ### Installing
 
-* How/where to download your program
-* Any modifications needed to be made to files/folders
+In order to use or work on this repo, please clone down the repo from github and follow the gem install instructions above. 
+
+
 
 ### Executing program
 
-* How to run the program
-* Step-by-step bullets
-```
-code blocks for commands
-```
+ In order to make sample api hits on Postman please
+ 
+ * Run ``rails s`` in your terminal.
+ * Open Postman
+ * Run one of the following
+   - ``GET http://localhost:3000/api/v1/forecast?location=denver,co``
+   - ``POST http://localhost:3000/api/v1/users``
+   - ``POST http://localhost:3000/api/v1/sessions``
+     + Please note that you'll need to send "email", "password", and "password_confirmation" in the body of the postman request as a raw json hash
+   - ``POST http://localhost:3000/api/v1/road_trip``
+     + Please note that you'll need to send "email", "password", and "password_confirmation" in the body of the postman request as a raw json hash
+
 
 ## Help
 
-Any advise for common problems or issues.
-```
-command to run if program contains helper info
-```
+I highly recommend creating fixture files for some of the tests. The OpenWeather api is excluded from VCR in this repo due to some of the problems it was causing, and due to this some of my tests are run with fixture files. These will be available when cloning down the repo, but you can make your own should you wish.
+
 
 ## Authors
 
-Contributors names and contact info
-
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
-
-## Version History
-
-* 0.2
-    * Various bug fixes and optimizations
-    * See [commit change]() or See [release history]()
-* 0.1
-    * Initial Release
-
-## License
-
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
-
-## Acknowledgments
-
-Inspiration, code snippets, etc.
-* [awesome-readme](https://github.com/matiassingers/awesome-readme)
-* [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
-* [dbader](https://github.com/dbader/readme-template)
-* [zenorocha](https://gist.github.com/zenorocha/4526327)
-* [fvcproductions](https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46)
+Sai Hall  
+ex. [@SaiHall](https://www.linkedin.com/in/sai-hall-503710237/)
